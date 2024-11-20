@@ -1,0 +1,17 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+p, ul, li {
+    font-size: 28px;
+}
+
+button {
+    font-size: 21px;
+}
