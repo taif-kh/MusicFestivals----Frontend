@@ -187,25 +187,88 @@ const Home = () => {
 
             <div>
             <h1>API Reference</h1>
-            <div className='w-[264px] border-2 border-opacity-50 rounded-[22px] flex flex-col h-36 items-center pl-8 '>
+            {/* w-[310px]  */}
+            <div className='w-[400px] h-[600px] border-2 border-opacity-50 flex flex-col items-center pl-14 gap-y-[40px] overflow-y-auto overflow-x-hidden'>
               {/* ---------- */}
-              <p className='underline'>Events</p>
+              <p className='mr-[70px] border-b-2 w-full h-full text-[37px] '>Events</p>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
-                <p className='text-[21px] '>List Events</p>
+                <button className='text-[16px] '>List Events</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>POST</div>
-                <p className='text-[21px] '>Create Event</p>
+                <button className='text-[16px] '>Create Event</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>Get event</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#CC0000] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>DEL</div>
-                <p className='text-[21px] '>Delete Event</p>
+                <button className='text-[16px] '>Delete Event</button>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#BD5B00] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>PUT</div>
+                <button className='text-[16px] '>Update Event</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>Limit Result</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>List an artist's Events</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>List a city's Events</button>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#BD5B00] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>PUT</div>
+                <button className='text-[16px] '>Hide Event</button>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#BD5B00] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>PUT</div>
+                <button className='text-[16px] '>Modify an Event's field</button>
+              </div>
+              {/* ********************** */}
+              <p className='mr-[70px] border-b-2 w-full h-full text-[37px] '>API Key</p>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>Get API Key</button>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>POST</div>
+                <button className='text-[16px] '>Create/Modify API Key</button>
+              </div>
+              {/* ********************** */}
+              <p className='mr-[70px] border-b-2 w-full h-full text-[37px] '>Users</p>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>POST</div>
+                <button className='text-[16px] '>Sign Up</button>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>POST</div>
+                <button className='text-[16px] '>Log In</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>Get a user's Events</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>Get User</button>
+              </div>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <button className='text-[16px] '>List Users</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#CC0000] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>DEL</div>
-                <p className='text-[21px] '>Delete Event</p>
+                <button className='text-[16px] '>Delete User</button>
               </div>
+              {/* ********************** */}
+
               {/* ---------- */}
             </div>
             </div>
