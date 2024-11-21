@@ -185,9 +185,33 @@ const Home = () => {
             <p className='justify-end'>MusicEvents API</p>
             </div>
 
+            <div>
+            <h1>API Reference</h1>
+            <div className='w-[264px] border-2 border-opacity-50 rounded-[22px] flex flex-col h-36 items-center pl-8 '>
+              {/* ---------- */}
+              <p className='underline'>Events</p>
+              <div className='flex items-start justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
+                <p className='text-[21px] '>List Events</p>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>POST</div>
+                <p className='text-[21px] '>Create Event</p>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#CC0000] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>DEL</div>
+                <p className='text-[21px] '>Delete Event</p>
+              </div>
+              <div className='flex items-center justify-start gap-x-2 w-full h-full'>
+                <div className='bg-[#CC0000] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>DEL</div>
+                <p className='text-[21px] '>Delete Event</p>
+              </div>
+              {/* ---------- */}
+            </div>
+            </div>
 
             <div>
-              
+
             </div>
           </div>
           {/* ---------------------------------------------------------------- */}
