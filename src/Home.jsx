@@ -7,6 +7,8 @@ import axios from 'axios';
 const Home = () => {
   const [user, setUser] = useState(null); // Store both token and email
 
+  const names = ['List Events', 'Create Event', 'Get event', 'Delete Event', 'Update Event', 'Limit Result', 'List an artist\'s Events', 'List a city\'s Events', 'Hide Event', 'Modify an Event\'s field', 'Get API Key', 'Create/Modify API Key', 'Sign Up', 'Log In', 'Get a user\'s Events', 'Get User', 'List Users', 'Delete User'];
+  const paths = ['/events', ''];
   async function addToken(data) {
     try {
       let response = await fetch("http://localhost:3000/log-in", {
