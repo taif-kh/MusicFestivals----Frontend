@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Item1 from './components/Item1';
+import Item0 from './components/Item0';
+import Item2 from './components/Item2';
 
 
 
 
 const Home = () => {
   const [user, setUser] = useState(null); // Store both token and email
+  const [item, setItem] = useState(0);
 
   const names = ['List Events', 'Create Event', 'Get event', 'Delete Event', 'Update Event', 'Limit Result', 'List an artist\'s Events', 'List a city\'s Events', 'Hide Event', 'Modify an Event\'s field', 'Get API Key', 'Create/Modify API Key', 'Sign Up', 'Log In', 'Get a user\'s Events', 'Get User', 'List Users', 'Delete User'];
   const paths = ['/events', ''];
@@ -197,27 +201,27 @@ const Home = () => {
               <p className='mr-[70px] border-b-2 w-full h-full text-[37px] '>Events</p>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
-                <button className='text-[16px] '>List Events</button>
+                <button className='text-[16px]' onClick={() => setItem(0)}>List Events</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>POST</div>
-                <button className='text-[16px] '>Create Event</button>
+                <button className='text-[16px] 'onClick={() => setItem(1)}>Create Event</button>
               </div>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
-                <button className='text-[16px] '>Get event</button>
+                <button className='text-[16px]' onClick={() => setItem(2)}>//Get event</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#CC0000] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>DEL</div>
-                <button className='text-[16px] '>Delete Event</button>
+                <button className='text-[16px] '>//Delete Event</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#BD5B00] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>PUT</div>
-                <button className='text-[16px] '>Update Event</button>
+                <button className='text-[16px] '>//Update Event</button>
               </div>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
-                <button className='text-[16px] '>Limit Result</button>
+                <button className='text-[16px] '>//Limit Result</button>
               </div>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
@@ -276,30 +280,10 @@ const Home = () => {
               {/* ---------- */}
             </div>
              {/* ----PART 2---- */}
-            <div className=' w-full h-[600px] py-[22px] px-[98px] '>
-              <h2 className='w-full'>List Events</h2>
-              <div className='w-full h-[25px] '></div>
-                           {/* ----PART 2 //  ---- */}
-              <div>
-                <div className='flex w-full h-[300px] '>
-                  <div className='w-[648px] '>
-                  <div className='flex items-center justify-start gap-x-[24px] '>
-                <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
-                <p className='text-[21px] '>/events</p>
-              </div>
-              <div className='h-[55px] w-5 '></div>
-              <p className='text-[21px] '>Get a list of all the Events.</p>
-                  </div>
-              <div className='flex flex-col w-[370px]  h-full gap-y-[7px] '>
-              <p className='text-[21px] font-semibold '>Request Sample</p>
-              <div className='w-[350px] h-[233px] bg-[#212121] rounded-[9px] font-mono px-[19px] py-[21px] break-words text-[16px] flex flex-col gap-y-[6px] '>
-                <p className='text-[16px] '>curl --location --request GET</p>
-                <p className='text-[16px] text-[#F5AB35] '>"http://localhost:3000/events"</p>
-              </div>
-              </div>
-                </div>
-              </div>
-            </div>
+             {item == 0 && (<Item0 />)}
+             {item == 1 && <Item1 />}
+             {item == 2 && <Item2 />}
+
 </div>
             </div>
 
