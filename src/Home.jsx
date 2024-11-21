@@ -89,7 +89,7 @@ const Home = () => {
   
   return (
     <html lang="en">
-      <body className="border-white border-2 w-screen h-screen flex flex-col">
+      <body className="border-white border-2 w-screen h-screen flex flex-col font-inter">
         <div>
         {/* ---------------------------------------------------------------- */}
         <div>
