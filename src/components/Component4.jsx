@@ -1,10 +1,15 @@
 import React, { forwardRef } from 'react';
 
-const Component4 = forwardRef((_, ref) => {
+const Component4 = forwardRef(({ component5Ref }, ref) => {
+  const handleScroll = () => {
+    if (component5Ref?.current) {
+      component5Ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };  
   return (
     <div
       ref={ref}
-      className="h-[685px] flex flex-col justify-center items-center w-full border-2"
+      className="h-[685px] flex flex-col justify-center items-center w-full border-2 relative"
     >
       <div>
         <h1>Technologies used</h1>
@@ -15,6 +20,9 @@ const Component4 = forwardRef((_, ref) => {
           alt="JavaScript Logo"
         />
       </div>
+      <button onClick={handleScroll} className="absolute bottom-2">
+        <img src="/down.png" alt="Scroll Down" />
+      </button>
     </div>
   );
 });

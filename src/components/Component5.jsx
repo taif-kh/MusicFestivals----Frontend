@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-const Component5 = () => {
+const Component5 = forwardRef((_, ref) => {
 
     return (
-        <div className='h-[685px] flex flex-col justify-start items-start w-full border-2 pt-[86px] pb-[57px] pl-[54px] pr-[51px] '>
+        <div 
+        ref={ref}
+        className='h-[685px] flex flex-col justify-start items-start w-full border-2 pt-[86px] pb-[57px] pl-[54px] pr-[51px] '>
             <div>
             <h1 className='text-[67px] font-semibold '>Ready to join?</h1>
             <div className='h-[71px] bg-green-400 w-full '></div>
@@ -16,6 +18,6 @@ const Component5 = () => {
             <p className='flex justify-end w-full text-[37px] font-semibold '>MusicEvents API</p>
         </div>
     );
-};
+});
 
 export default Component5;
