@@ -4,6 +4,10 @@ import Item1 from './components/Item1';
 import Item0 from './components/Item0';
 import Item2 from './components/Item2';
 import Component1 from './components/Component1';
+import Component2 from './components/Component2';
+import Component3 from './components/Component3';
+import Component4 from './components/Component4';
+import Component5 from './components/Component5';
 
 
 
@@ -216,51 +220,22 @@ console.log(userDetails);
             <div className='h-[120px] bg-green-500 w-full'></div>
             <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Get started</button>
         </div>
-            {/* <Component1 /> */}
+            <Component1 />
 
-            <h1>Why using an API?</h1>
-            <ol className='list-disc pl-9'>
-              <li>Easy to integrate</li>
-              <li>Cross-Platform Data Access: mobile, web etc..</li>
-              <li>Security and Control: authentication and authorization.</li>
-              <li>No server-side code.</li>
-            </ol>
+<Component2 />
 
-            <h1>What can i do with MusicEvents API?</h1>
-            <ol className='list-disc pl-9'>
-            <li>Check out music events around the world.</li>
-              <li>Search events by location or artist lineup.</li>
-              <li>Get events' Detailed information: date, artist, location and more.</li>
-              <li>Check out tickets' availability, providing services and prices.</li>
-              <h2>Member?              </h2>
-              <li>Manage your own music events: View, Add, Edit and Delete them. </li>
-              <h2>Admin?              </h2>
-              <li>Manage users: View and Delete them. </li>
-            </ol>
 
-            <h1>Examples of websites to integrate with</h1>
-            <ol className='list-disc pl-9'>
-            <li>Global Music Events Explorer: Search for events</li>
-              <li>Personal Music Events Dashboard: Allow a user to manage his own events</li>
-              <li>Events' booking Platform: Buy tickets to an event</li>
-              <li>Music Social Platform: Discuss music and events</li>
-              <li>Event Organizer Portal: Organisations can manage their events and sell tickets. </li>
-              <li>Music Festival Hub: A dedicated portal for festivals, showcasing events, lineups, and tickets.</li>
-            </ol>
+<Component3 />
 
-            <h1>Technologies used</h1>
-            <img src='/react.svg' className='invert' />
-            <img src='/javascript-155-svgrepo-com.svg' className='invert w-14 h-14' />
+<Component4 />
 
-            <h1>Ready to join?</h1>
-            <div className='flex gap-3'>
-            <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Join us</button>
-            <button className='w-[160px] h-[64px] bg-black text-white rounded-[45px] flex justify-center items-center border-2'>View docs</button>
-            <p className='justify-end'>MusicEvents API</p>
-            </div>
+
+<Component5 />
 
             <div>
-            <h1>API Reference</h1>
+              <div className='w-full h-4 '></div>
+            <h1 className='text-[67px] font-semibold ml-[23px] '>API Reference</h1>
+            <div className='w-full h-7 '></div>
             {/* w-[310px]  */}
 <div className='flex'>
   {/* --api reference splitted into two */}

@@ -3,15 +3,16 @@ import React from 'react';
 const Component1 = () => {
 
     return (
-        <div className='h-[685px] w-full bg-yellow-300 '>
-            <div className='flex gap-3'>
-            <p>Presentation</p>
-            <p>Signup/Login</p>
-            <p>API Reference</p>
+        <div className='h-[685px] flex flex-col justify-center items-center w-full border-2 '>
+            <div>
+            <h1>Why using an API?</h1>
+            <ol className='list-disc pl-9'>
+              <li>Easy to integrate</li>
+              <li>Cross-Platform Data Access: mobile, web etc..</li>
+              <li>Security and Control: authentication and authorization.</li>
+              <li>No server-side code.</li>
+            </ol>
             </div>
-            <h1>MusicEvents API</h1>
-            <p>MusicEvents API for your events’ website</p>
-            <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Get started</button>
         </div>
     );
 };
