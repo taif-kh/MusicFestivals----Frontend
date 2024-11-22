@@ -26,12 +26,20 @@ const Home = () => {
   const component5Ref = useRef(null);
   const component6Ref = useRef(null);
 
+  const topRef = useRef(null);
+
 
   
 
   const handleScroll = () => {
     if (component1Ref.current) {
       component1Ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    if (topRef?.current) {
+      topRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -240,7 +248,7 @@ console.log(userDetails);
         </div>
 
 
-          <hr className='border-white border-2 '/>
+          <hr className='border-white border-2 '  ref={topRef}/>
           <div className='bg-black'>
                         {/* <Component1 /> */}
           <div className=' flex flex-col h-[685px] w-full py-[42px] pl-[66px] pr-[60px] '>
@@ -277,7 +285,7 @@ console.log(userDetails);
 
 <Component5 ref={component5Ref} component6Ref={component6Ref} />
 
-            <div ref={component6Ref}>
+            <div ref={component6Ref} className='relative'>
               <div className='w-full h-4 '></div>
             <h1 className='text-[67px] font-semibold ml-[23px] '>API Reference</h1>
             <div className='w-full h-7 '></div>
@@ -375,6 +383,10 @@ console.log(userDetails);
              {item == 4 && <Item4 />}
 
 </div>
+            
+<button onClick={scrollToTop} className="absolute right-1/2 bottom-16 rotate-180">
+        <img src="/down.png" alt="Scroll Down" />
+      </button>
             </div>
 
             <div>
