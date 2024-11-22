@@ -112,7 +112,7 @@ const Home = () => {
 
 
   }, []);
-  // border-orange-700 border-2
+  // border-orange-700  
 
   console.log("Rendering component with user:", user);
 
@@ -163,7 +163,7 @@ console.log(userDetails);
 
   return (
     <html lang="en">
-      <body className="border-white border-2 w-screen h-screen flex flex-col font-inter">
+      <body className="border-white   w-screen h-screen flex flex-col font-inter overflow-hidden">
         <div>
         {/* ---------------------------------------------------------------- */}
         <div>
@@ -171,12 +171,12 @@ console.log(userDetails);
         {user && (
           <div className="">
 
-            <div className='flex flex-col justify-center items-center w-screen h-[685px] border-2 '>
+            <div className='flex flex-col justify-center items-center w-screen h-[685px]   '>
               
 
 
             {/* ---- USER DETAILS --- */}
-            <div className='flex  flex-col text-[16px] w-full pl-[100px]'>
+            <div className='flex  flex-col text-[16px] w-screen pl-[100px]'>
             <h3>Welcome</h3>
             <h3>Your email: {user.email}</h3>
             <h3>Your ID: {user.id}</h3>
@@ -248,20 +248,20 @@ console.log(userDetails);
         </div>
 
 
-          <hr className='border-white border-2 '  ref={topRef}/>
+          <hr className='border-white'  ref={topRef}/>
           <div className='bg-black'>
                         {/* <Component1 /> */}
-          <div className=' flex flex-col h-[685px] w-full py-[42px] pl-[66px] pr-[60px] '>
+          <div className=' flex flex-col h-[685px] w-screen py-[42px] pl-[66px] pr-[60px] '>
             <div className='flex self-end  w-[650px] justify-evenly '>
             <p className=' border-r-2 w-[250px] flex items-center justify-center '>Presentation</p>
             <button onClick={() => setHidden(!hidden)} className='text-[28px] border-r-2 w-[250px] flex items-center justify-center '>Signup/Login</button>
             <p className='w-[250px] flex items-center justify-center '>API Reference</p>
             </div>
-            <div className='h-[75px] w-full '></div>
+            <div className='h-[75px] w-screen '></div>
             <h1 className='text-[67px] '>MusicEvents API</h1>
-            <div className='h-[26px]  w-full '></div>
+            <div className='h-[26px]  w-screen '></div>
             <p>MusicEvents API for your events’ website</p>
-            <div className='h-[120px]  w-full'></div>
+            <div className='h-[120px]  w-screen'></div>
             <button
         className="w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center"
         onClick={handleScroll}
@@ -285,14 +285,15 @@ console.log(userDetails);
 
 <Component5 ref={component5Ref} component6Ref={component6Ref} />
 
-            <div ref={component6Ref} className='relative'>
-              <div className='w-full h-4 '></div>
+            <div ref={component6Ref} className='relative overflow-hidden w-screen h-screen   border-purple-600 '>
+              <div className='w-screen h-4 '></div>
             <h1 className='text-[67px] font-semibold ml-[23px] '>API Reference</h1>
-            <div className='w-full h-7 '></div>
+            <div className='w-screen h-4 '></div>
+            {/* <div className='w-full h-7 '></div> */}
             {/* w-[310px]  */}
-<div className='flex'>
+<div className='flex overflow-x-hidden'>
   {/* --api reference splitted into two */}
-<div className='w-[400px] h-[600px] border-opacity-50 flex flex-col items-center pl-14 gap-y-[40px] overflow-y-auto overflow-x-hidden'>
+<div className='w-[400px] h-[580px] border-opacity-50 flex flex-col items-center pl-14 gap-y-[40px] overflow-y-auto overflow-x-hidden pb-12 '>
               {/* ---------- */}
               <p className='mr-[70px] border-b-2 w-full h-full text-[37px] '>Events</p>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
@@ -384,7 +385,7 @@ console.log(userDetails);
 
 </div>
             
-<button onClick={scrollToTop} className="absolute right-1/2 bottom-16 rotate-180">
+<button onClick={scrollToTop} className="absolute right-1/2 bottom-0 rotate-180">
         <img src="/down.png" alt="Scroll Down" />
       </button>
             </div>

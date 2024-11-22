@@ -10,7 +10,7 @@ const Component2 = forwardRef(({ component3Ref }, ref) => {
   return (
     <div
       ref={ref}
-      className="h-screen flex flex-col justify-center items-center w-screen border-2 relative"
+      className="h-screen flex flex-col justify-center items-center w-screen relative overflow-x-hidden"
     >
       <div>
         <h1>What can I do with MusicEvents API?</h1>

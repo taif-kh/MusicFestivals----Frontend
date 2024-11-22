@@ -6,11 +6,11 @@ const Component4 = forwardRef(({ component5Ref }, ref) => {
       component5Ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-    
+
   return (
     <div
       ref={ref}
-      className="h-[685px] flex flex-col justify-center items-center w-full border-2 relative"
+      className="h-screen flex flex-col justify-center items-center w-screen  relative overflow-x-hidden"
     >
       <div>
         <h1>Technologies used</h1>

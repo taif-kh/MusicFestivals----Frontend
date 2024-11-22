@@ -10,7 +10,7 @@ const Component3 = forwardRef(({ component4Ref }, ref) => {
   return (
     <div
       ref={ref}
-      className="h-[685px] flex flex-col justify-center items-center w-full border-2 relative"
+      className="h-screen flex flex-col justify-center items-center w-screen relative overflow-x-hidden"
     >
       <div>
         <h1>Examples of websites to integrate with</h1>
