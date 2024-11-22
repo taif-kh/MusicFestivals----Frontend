@@ -21,6 +21,8 @@ const Home = () => {
   const [hidden, setHidden] = useState(true);
   const component1Ref = useRef(null);
   const component2Ref = useRef(null);
+  const component3Ref = useRef(null);
+  
 
   const handleScroll = () => {
     if (component1Ref.current) {
@@ -254,12 +256,17 @@ console.log(userDetails);
         Get started
       </button>   
   </div>
+
+
+
+
+
+
+
+
   <Component1 ref={component1Ref} component2Ref={component2Ref} />
-
-<Component2 ref={component2Ref} />
-
-
-<Component3 />
+      <Component2 ref={component2Ref} component3Ref={component3Ref} />
+      <Component3 ref={component3Ref} />
 
 <Component4 />
 

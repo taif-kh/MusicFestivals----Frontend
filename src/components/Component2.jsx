@@ -1,10 +1,16 @@
 import React, { forwardRef } from 'react';
 
-const Component2 = forwardRef((_, ref) => {
+const Component2 = forwardRef(({ component3Ref }, ref) => {
+  const handleScroll = () => {
+    if (component3Ref?.current) {
+      component3Ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div
       ref={ref}
-      className="h-screen flex flex-col justify-center items-center w-screen border-2"
+      className="h-screen flex flex-col justify-center items-center w-screen border-2 relative"
     >
       <div>
         <h1>What can I do with MusicEvents API?</h1>
@@ -25,6 +31,9 @@ const Component2 = forwardRef((_, ref) => {
           <li>Manage users: View and Delete them.</li>
         </ol>
       </div>
+      <button onClick={handleScroll} className="absolute bottom-2">
+        <img src="/down.png" alt="Scroll Down" />
+      </button>
     </div>
   );
 });
