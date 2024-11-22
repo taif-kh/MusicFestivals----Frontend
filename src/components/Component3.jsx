@@ -1,10 +1,16 @@
 import React, { forwardRef } from 'react';
 
-const Component3 = forwardRef((_, ref) => {
+const Component3 = forwardRef(({ component4Ref }, ref) => {
+  const handleScroll = () => {
+    if (component4Ref?.current) {
+      component4Ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div
       ref={ref}
-      className="h-[685px] flex flex-col justify-center items-center w-full border-2"
+      className="h-[685px] flex flex-col justify-center items-center w-full border-2 relative"
     >
       <div>
         <h1>Examples of websites to integrate with</h1>
@@ -23,6 +29,9 @@ const Component3 = forwardRef((_, ref) => {
           </li>
         </ol>
       </div>
+      <button onClick={handleScroll} className="absolute bottom-2">
+        <img src="/down.png" alt="Scroll Down" />
+      </button>
     </div>
   );
 });

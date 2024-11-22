@@ -22,6 +22,8 @@ const Home = () => {
   const component1Ref = useRef(null);
   const component2Ref = useRef(null);
   const component3Ref = useRef(null);
+  const component4Ref = useRef(null);
+
   
 
   const handleScroll = () => {
@@ -266,9 +268,8 @@ console.log(userDetails);
 
   <Component1 ref={component1Ref} component2Ref={component2Ref} />
       <Component2 ref={component2Ref} component3Ref={component3Ref} />
-      <Component3 ref={component3Ref} />
-
-<Component4 />
+      <Component3 ref={component3Ref} component4Ref={component4Ref} />
+      <Component4 ref={component4Ref} />
 
 
 <Component5 />
