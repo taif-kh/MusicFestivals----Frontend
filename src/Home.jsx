@@ -3,6 +3,7 @@ import axios from 'axios';
 import Item1 from './components/Item1';
 import Item0 from './components/Item0';
 import Item2 from './components/Item2';
+import Component1 from './components/Component1';
 
 
 
@@ -11,6 +12,7 @@ const Home = () => {
   const [user, setUser] = useState(null); // Store both token and email
   const [item, setItem] = useState(0);
   const [userDetails, setUserDetails] = useState({});
+  const [hidden, setHidden] = useState(true);
 
   const names = ['List Events', 'Create Event', 'Get event', 'Delete Event', 'Update Event', 'Limit Result', 'List an artist\'s Events', 'List a city\'s Events', 'Hide Event', 'Modify an Event\'s field', 'Get API Key', 'Create/Modify API Key', 'Sign Up', 'Log In', 'Get a user\'s Events', 'Get User', 'List Users', 'Delete User'];
   const paths = ['/events', ''];
@@ -138,16 +140,18 @@ console.log(userDetails);
           {/* If user is logged in, show the welcome message and token */}
         {user && (
           <div className="">
+            <div className='flex text-[16px]'>
             <h3>Welcome</h3>
             <h3>Your email: {user.email}</h3>
             <h3>Your ID: {user.id}</h3>
             <h3>Your JWT Token:</h3>
-            <p className="break-words w-64 p-2 rounded">
+            <p className="w-64 p-2 rounded text-[16px]">
               {user.token || localStorage.getItem("jwt_token")}
             </p>
-            <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded">
+            <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded text-[16px]">
               Log Out
             </button>
+            </div>
             {/* ---- GETY API --- */}
             <div className='flex flex-col justify-center items-center w-full h-[200px] border-2 '>
               <div className='flex items-center pr-[570px] gap-x-3'>
@@ -163,7 +167,7 @@ console.log(userDetails);
               <div className="font-mono text-lg">{userDetails.apiKey ? userDetails.apiKey : '' } </div>
               </div>
               <div className='pr-[690px] flex gap-x-3 flex items-center'>
-              <button className='text-[21px] font-semibold' onClick={() =>{ChangeKey(user)}}>Change it</button>
+              <button className='text-[21px] font-semibold' onClick={() =>{ChangeKey(user)}}>{userDetails.apiKey ? 'Change' : 'Create'} it</button>
               <img src="/refresh.png"
                                 className=" w-[20px] h-[20px] cursor-pointer"
               />
@@ -173,7 +177,8 @@ console.log(userDetails);
           </div>
         )}
           {/* If no user is logged in */}
-          {!user &&           <div>
+          {!user &&           <div className={`${hidden ? 'hidden' : '' } w-screen h-screen`}>
+            <button onClick={() => setHidden(!hidden)} className=''>Exit</button>
           <h2 className="text-center">Log In</h2>
           <form onSubmit={LoginSubmit} className='text-black'>
             <div className="flex flex-col items-center gap-y-2">
@@ -190,7 +195,6 @@ console.log(userDetails);
               </button>
             </div>
           </form>
-          <div>Please log in.</div>
           </div>}
 
         </div>
@@ -198,15 +202,22 @@ console.log(userDetails);
 
           <hr className='border-white border-2 '/>
           <div className='bg-black'>
-
-            <div className='flex gap-3'>
-            <p>Presentation</p>
-            <p>Signup/Login</p>
-            <p>API Reference</p>
+                        {/* <Component1 /> */}
+          <div className=' flex flex-col h-[685px] w-full py-[42px] pl-[66px] pr-[60px] '>
+            <div className='flex self-end  w-[650px] justify-evenly '>
+            <p className=' border-r-2 w-[250px] flex items-center justify-center '>Presentation</p>
+            <button onClick={() => setHidden(!hidden)} className='text-[28px] border-r-2 w-[250px] flex items-center justify-center '>Signup/Login</button>
+            <p className='w-[250px] flex items-center justify-center '>API Reference</p>
             </div>
-            <h1>MusicEvents API</h1>
+            <div className='h-[75px] bg-white w-full '></div>
+            <h1 className='text-[67px] '>MusicEvents API</h1>
+            <div className='h-[26px] bg-yellow-300 w-full '></div>
             <p>MusicEvents API for your events’ website</p>
+            <div className='h-[120px] bg-green-500 w-full'></div>
             <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Get started</button>
+        </div>
+            {/* <Component1 /> */}
+
             <h1>Why using an API?</h1>
             <ol className='list-disc pl-9'>
               <li>Easy to integrate</li>
