@@ -19,11 +19,12 @@ const Home = () => {
   const [item, setItem] = useState(0);
   const [userDetails, setUserDetails] = useState({});
   const [hidden, setHidden] = useState(true);
-  const targetRef = useRef(null);
+  const component1Ref = useRef(null);
+  const component2Ref = useRef(null);
 
   const handleScroll = () => {
-    if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (component1Ref.current) {
+      component1Ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -253,9 +254,9 @@ console.log(userDetails);
         Get started
       </button>   
   </div>
-            <Component1 ref={targetRef} />
+  <Component1 ref={component1Ref} component2Ref={component2Ref} />
 
-<Component2 />
+<Component2 ref={component2Ref} />
 
 
 <Component3 />

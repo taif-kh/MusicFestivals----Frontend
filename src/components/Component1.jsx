@@ -1,9 +1,12 @@
-/* eslint-disable react/display-name */
 import React, { forwardRef } from 'react';
 
-const Component1 = forwardRef((_props, ref) => {
-    
-    
+const Component1 = forwardRef(({ component2Ref }, ref) => {
+  const handleScroll = () => {
+    if (component2Ref?.current) {
+      component2Ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div ref={ref} className="h-screen flex flex-col justify-center items-center w-screen relative">
       <div>
@@ -15,8 +18,9 @@ const Component1 = forwardRef((_props, ref) => {
           <li>No server-side code</li>
         </ol>
       </div>
-      {/* <div className='w-10 h-10 bg-purple-600'></div> */}
-      <img src="/down.png" className='absolute bottom-2 ' />
+      <button onClick={handleScroll} className="absolute bottom-2">
+        <img src="/down.png" alt="Scroll Down" />
+      </button>
     </div>
   );
 });
