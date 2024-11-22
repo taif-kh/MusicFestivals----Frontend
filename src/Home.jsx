@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Item1 from './components/Item1';
 import Item0 from './components/Item0';
@@ -19,6 +19,13 @@ const Home = () => {
   const [item, setItem] = useState(0);
   const [userDetails, setUserDetails] = useState({});
   const [hidden, setHidden] = useState(true);
+  const targetRef = useRef(null);
+
+  const handleScroll = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const names = ['List Events', 'Create Event', 'Get event', 'Delete Event', 'Update Event', 'Limit Result', 'List an artist\'s Events', 'List a city\'s Events', 'Hide Event', 'Modify an Event\'s field', 'Get API Key', 'Create/Modify API Key', 'Sign Up', 'Log In', 'Get a user\'s Events', 'Get User', 'List Users', 'Delete User'];
   const paths = ['/events', ''];
@@ -234,14 +241,19 @@ console.log(userDetails);
             <button onClick={() => setHidden(!hidden)} className='text-[28px] border-r-2 w-[250px] flex items-center justify-center '>Signup/Login</button>
             <p className='w-[250px] flex items-center justify-center '>API Reference</p>
             </div>
-            <div className='h-[75px] bg-white w-full '></div>
+            <div className='h-[75px] w-full '></div>
             <h1 className='text-[67px] '>MusicEvents API</h1>
-            <div className='h-[26px] bg-yellow-300 w-full '></div>
+            <div className='h-[26px]  w-full '></div>
             <p>MusicEvents API for your events’ website</p>
-            <div className='h-[120px] bg-green-500 w-full'></div>
-            <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Get started</button>
-        </div>
-            <Component1 />
+            <div className='h-[120px]  w-full'></div>
+            <button
+        className="w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center"
+        onClick={handleScroll}
+      >
+        Get started
+      </button>   
+  </div>
+            <Component1 ref={targetRef} />
 
 <Component2 />
 
