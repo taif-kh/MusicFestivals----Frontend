@@ -24,6 +24,7 @@ const Home = () => {
   const component3Ref = useRef(null);
   const component4Ref = useRef(null);
   const component5Ref = useRef(null);
+  const component6Ref = useRef(null);
 
 
   
@@ -274,9 +275,9 @@ console.log(userDetails);
       <Component4 ref={component4Ref} component5Ref={component5Ref} />
 
 
-<Component5 ref={component5Ref} />
+<Component5 ref={component5Ref} component6Ref={component6Ref} />
 
-            <div>
+            <div ref={component6Ref}>
               <div className='w-full h-4 '></div>
             <h1 className='text-[67px] font-semibold ml-[23px] '>API Reference</h1>
             <div className='w-full h-7 '></div>

@@ -1,7 +1,11 @@
 import React, { forwardRef } from 'react';
 
-const Component5 = forwardRef((_, ref) => {
-
+const Component5 = forwardRef(({ component6Ref }, ref) => {
+    const handleScroll = () => {
+      if (component6Ref?.current) {
+        component6Ref.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
     return (
         <div 
         ref={ref}
@@ -11,7 +15,7 @@ const Component5 = forwardRef((_, ref) => {
             <div className='h-[71px] bg-green-400 w-full '></div>
             <div className='flex gap-3 justify-start'>
             <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Join us</button>
-            <button className='w-[160px] h-[64px] bg-black text-white rounded-[45px] flex justify-center items-center border-2'>View docs</button>
+            <button className='w-[160px] h-[64px] bg-black text-white rounded-[45px] flex justify-center items-center border-2' onClick={handleScroll}>API Reference</button>
             </div>
             <div className='h-[261px] w-full '></div>
             </div>

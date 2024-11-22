@@ -5,7 +5,8 @@ const Component4 = forwardRef(({ component5Ref }, ref) => {
     if (component5Ref?.current) {
       component5Ref.current.scrollIntoView({ behavior: 'smooth' });
     }
-  };  
+  };
+    
   return (
     <div
       ref={ref}
