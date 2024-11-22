@@ -10,6 +10,7 @@ import Item2 from './components/Item2';
 const Home = () => {
   const [user, setUser] = useState(null); // Store both token and email
   const [item, setItem] = useState(0);
+  const [userDetails, setUserDetails] = useState({});
 
   const names = ['List Events', 'Create Event', 'Get event', 'Delete Event', 'Update Event', 'Limit Result', 'List an artist\'s Events', 'List a city\'s Events', 'Hide Event', 'Modify an Event\'s field', 'Get API Key', 'Create/Modify API Key', 'Sign Up', 'Log In', 'Get a user\'s Events', 'Get User', 'List Users', 'Delete User'];
   const paths = ['/events', ''];
@@ -23,14 +24,14 @@ const Home = () => {
         body: data,
         mode: "cors",
       });
-  
+
       const result = await response.json();
       console.log("Response from server:", result);
-  
+
       const jwt_token = result.token;
       const id = result.id; // Get the user ID
       const email = result.email;
-  
+
       if (jwt_token && id && email) {
         setUser({ token: jwt_token, id: id, email: email });
         localStorage.setItem("jwt_token", jwt_token);
@@ -44,7 +45,7 @@ const Home = () => {
       console.error("Error:", error);
     }
   }
-  
+
 
   function removeToken() {
     setUser(null);
@@ -78,11 +79,34 @@ const Home = () => {
     // ----------
 
 
-      
   }, []);
   // border-orange-700 border-2
 
   console.log("Rendering component with user:", user);
+
+  useEffect(() => {
+    if (user && user.id) {
+      axios.get(`http://localhost:3000/users/${user.id}`)
+        .then((response) => {
+          setUserDetails(response.data);
+          console.log("userDetails:", response.data);
+        })
+        .catch(error => console.log(error));
+    }
+    console.log(userDetails);
+    
+  }, [user]);
+
+
+  const ChangeKey = (user) => {
+    axios.post(`http://localhost:3000/key/${user.id}`)
+    .then((response) => {
+      setUserDetails(response.data);
+      console.log("userDetails:", response.data);
+    })
+    .catch(error => console.log(error));
+}
+console.log(userDetails);
 
 
   // const postsWithComments = posts.map(post => {
@@ -92,7 +116,19 @@ const Home = () => {
   //   };
   // });
 
-  
+  const handleCopy = () => {
+    const textToCopy = `${userDetails.apiKey}`;
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        console.log("Text copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  };
+
+
   return (
     <html lang="en">
       <body className="border-white border-2 w-screen h-screen flex flex-col font-inter">
@@ -101,24 +137,45 @@ const Home = () => {
         <div>
           {/* If user is logged in, show the welcome message and token */}
         {user && (
-          <div className="bg-white text-black">
+          <div className="">
             <h3>Welcome</h3>
             <h3>Your email: {user.email}</h3>
             <h3>Your ID: {user.id}</h3>
             <h3>Your JWT Token:</h3>
-            <p className="break-words w-64 bg-gray-100 p-2 rounded">
+            <p className="break-words w-64 p-2 rounded">
               {user.token || localStorage.getItem("jwt_token")}
             </p>
             <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded">
               Log Out
             </button>
+            {/* ---- GETY API --- */}
+            <div className='flex flex-col justify-center items-center w-full h-[200px] border-2 '>
+              <div className='flex items-center pr-[570px] gap-x-3'>
+              <p className='text-[28px] font-bold '>Get your API Key</p>
+            <img
+                  src="/copy.png"
+                  alt="Copy"
+                  className="invert w-[20px] h-[20px] cursor-pointer"
+                  onClick={() =>handleCopy()}
+                />
+                </div>
+              <div className='bg-[#212121] w-[817px] h-[148px] rounded-[9px] flex flex-col items-center justify-center'>
+              <div className="font-mono text-lg">{userDetails.apiKey ? userDetails.apiKey : '' } </div>
+              </div>
+              <div className='pr-[690px] flex gap-x-3 flex items-center'>
+              <button className='text-[21px] font-semibold' onClick={() =>{ChangeKey(user)}}>Change it</button>
+              <img src="/refresh.png"
+                                className=" w-[20px] h-[20px] cursor-pointer"
+              />
+              </div>
+            </div>
 
           </div>
         )}
           {/* If no user is logged in */}
           {!user &&           <div>
           <h2 className="text-center">Log In</h2>
-          <form onSubmit={LoginSubmit}>
+          <form onSubmit={LoginSubmit} className='text-black'>
             <div className="flex flex-col items-center gap-y-2">
               <label>
                 Email:
@@ -135,7 +192,7 @@ const Home = () => {
           </form>
           <div>Please log in.</div>
           </div>}
-          
+
         </div>
 
 
@@ -296,7 +353,7 @@ const Home = () => {
       </body>
     </html>
   );
-  
+
 };
 
 export default Home;
