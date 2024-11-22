@@ -8,6 +8,8 @@ import Component2 from './components/Component2';
 import Component3 from './components/Component3';
 import Component4 from './components/Component4';
 import Component5 from './components/Component5';
+import Item3 from './components/Item3';
+import Item4 from './components/Item4';
 
 
 
@@ -271,15 +273,15 @@ console.log(userDetails);
               </div>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
-                <button className='text-[16px]' onClick={() => setItem(2)}>//Get event</button>
+                <button className='text-[16px]' onClick={() => setItem(2)}>Get event</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#CC0000] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>DEL</div>
-                <button className='text-[16px] '>//Delete Event</button>
+                <button className='text-[16px] ' onClick={() => setItem(3)}>Delete Event</button>
               </div>
               <div className='flex items-center justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#BD5B00] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>PUT</div>
-                <button className='text-[16px] '>//Update Event</button>
+                <button className='text-[16px] ' onClick={() => setItem(4)}>Update Event</button>
               </div>
               <div className='flex items-start justify-start gap-x-2 w-full h-full'>
                 <div className='bg-[#008753] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>GET</div>
@@ -345,6 +347,8 @@ console.log(userDetails);
              {item == 0 && (<Item0 />)}
              {item == 1 && <Item1 />}
              {item == 2 && <Item2 />}
+             {item == 3 && <Item3 />}
+             {item == 4 && <Item4 />}
 
 </div>
             </div>

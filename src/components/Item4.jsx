@@ -3,14 +3,15 @@ import React from 'react';
 const Item4 = () => {
   const handleCopy = () => {
     const textToCopy = `
-    curl --location 'http://localhost:3000/events/my_api_key_is_70c50a90b1n0.7211857592015423' \
+curl --location --request PUT 'http://localhost:3000/events/my_api_key_is_70c50a90b1n0.6651203107661632' \
 --header 'Content-Type: application/json' \
 --data '{
-  "name" : "Coldplay WORLD TOUR",     
+    "id": "6",
+  "name" : "COLDPLAY WORLD TOUR",     
   "description":    "Coldplay are a British rock band formed in London in 1997. They consist of vocalist and pianist Chris Martin, guitarist Jonny Buckland, bassist Guy Berryman, drummer and percussionist Will Champion, and manager Phil Harvey. They are best known for their live performances, and for impacting popular culture through their music, advocacy and achievements.",
   "date":        "2025-01-09T00:00:00Z",
-  "city": "London", 
-   "country": "UK", 
+  "city": "Abu Dhabi", 
+   "country": "UAE", 
   "ticketPrice":  50,
   "artist": "Coldplay",
   "imgUrl": " "
@@ -36,15 +37,14 @@ const Item4 = () => {
           <div className="flex w-full h-[300px] ">
             <div className="w-[648px] ">
               <div className="flex items-center justify-start gap-x-[24px] ">
-                <div className="bg-[#0074E8] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] ">
-                  POST
-                </div>
+              <div className='bg-[#BD5B00] w-[48px] h-[24px] rounded-[6px] flex items-center justify-center text-[12px] '>PUT</div>
+
                 <button className="text-[21px]">/events/:apiKey</button>
               </div>
               <div className="h-[55px] w-5 "></div>
-              <p className="text-[21px] ">Update a specific event. (Id included in the request's body)</p>
+              <p className="text-[21px] ">Update a specific event. <br /> (Event's id is included in the request's body)</p>
             </div>
-            <div className="flex flex-col w-[370px] h-full gap-y-[7px] ">
+            <div className="flex flex-col w-[370px] h-full gap-y-[7px] mb-9 border-2">
               <div className="flex items-center gap-x-2 ">
                 <p className="text-[21px] font-semibold ">Request Sample </p>
                 <img
@@ -54,8 +54,8 @@ const Item4 = () => {
                   onClick={handleCopy}
                 />
               </div>
-              <div className="w-[350px] h-[550px] bg-[#212121] rounded-[9px] font-mono px-[19px] py-[21px] break-words text-[16px] flex flex-col gap-y-[6px] ">
-                <img src="/item1.jpg" className="w-[350px] " alt="Item" />
+              <div className="w-[350px] h-[540px] bg-[#212121] rounded-[9px] font-mono px-[19px] pt-1 pb-[21px] break-words text-[16px] flex flex-col gap-y-[6px] ">
+                <img src="/PUT_event.jpg" className="w-[350px] " alt="Item" />
               </div>
             </div>
           </div>
