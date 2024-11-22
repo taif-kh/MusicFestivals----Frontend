@@ -58,6 +58,7 @@ const Home = () => {
     localStorage.removeItem("jwt_token");
     localStorage.removeItem("email");
     localStorage.removeItem("id");
+    setHidden(true);
   }
 
   async function LoginSubmit(e) {
@@ -144,20 +145,33 @@ console.log(userDetails);
           {/* If user is logged in, show the welcome message and token */}
         {user && (
           <div className="">
-            <div className='flex text-[16px]'>
+
+            <div className='flex flex-col justify-center items-center w-screen h-[685px] border-2 '>
+              
+
+
+            {/* ---- USER DETAILS --- */}
+            <div className='flex  flex-col text-[16px] w-full pl-[100px]'>
             <h3>Welcome</h3>
             <h3>Your email: {user.email}</h3>
             <h3>Your ID: {user.id}</h3>
+            <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded text-[16px] w-[100px] h-12 ">
+              Log Out
+            </button>
+            <div>
+            </div>
             <h3>Your JWT Token:</h3>
             <p className="w-64 p-2 rounded text-[16px]">
               {user.token || localStorage.getItem("jwt_token")}
             </p>
-            <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded text-[16px]">
-              Log Out
-            </button>
             </div>
+                {/* ---- USER DETAILS --- */}
+
+
+
+
+
             {/* ---- GETY API --- */}
-            <div className='flex flex-col justify-center items-center w-full h-[200px] border-2 '>
               <div className='flex items-center pr-[570px] gap-x-3'>
               <p className='text-[28px] font-bold '>Get your API Key</p>
             <img
@@ -170,11 +184,15 @@ console.log(userDetails);
               <div className='bg-[#212121] w-[817px] h-[148px] rounded-[9px] flex flex-col items-center justify-center'>
               <div className="font-mono text-lg">{userDetails.apiKey ? userDetails.apiKey : '' } </div>
               </div>
-              <div className='pr-[690px] flex gap-x-3 flex items-center'>
-              <button className='text-[21px] font-semibold' onClick={() =>{ChangeKey(user)}}>{userDetails.apiKey ? 'Change' : 'Create'} it</button>
+              {/* pr-[690px]  */}
+              <div className='flex gap-x-3  w-[817px] items-center justify-between'>
+                <div className='flex items-center gap-x-1'>
+                <button className='text-[21px] font-semibold' onClick={() =>{ChangeKey(user)}}>{userDetails.apiKey ? 'Change' : 'Create'} it</button>
               <img src="/refresh.png"
                                 className=" w-[20px] h-[20px] cursor-pointer"
               />
+                  </div>
+                  <div className='text-[16px] flex gap-x-3 justify-self-end'><p className='font-semibold text-[16px]'>Your id: </p> { user.id} </div>
               </div>
             </div>
 
@@ -199,7 +217,8 @@ console.log(userDetails);
               </button>
             </div>
           </form>
-          </div>}
+          </div>
+          }
 
         </div>
 
