@@ -29,7 +29,7 @@ curl --location --request PUT 'http://localhost:3000/events/my_api_key_is_70c50a
 
   return (
     <div>
-      <div className="w-full h-[600px] py-[22px] px-[98px]">
+      <div className="w-full h-[600px] py-[22px] px-[98px]  overflow-hidden">
         <h2 className="w-full">Update Event</h2>
         <div className="w-full h-[25px] "></div>
         {/* ----PART 2 //  ---- */}
@@ -44,7 +44,7 @@ curl --location --request PUT 'http://localhost:3000/events/my_api_key_is_70c50a
               <div className="h-[55px] w-5 "></div>
               <p className="text-[21px] ">Update a specific event. <br /> (Event's id is included in the request's body)</p>
             </div>
-            <div className="flex flex-col w-[370px] h-full gap-y-[7px] mb-9 border-2">
+            <div className="flex flex-col w-[370px] h-full gap-y-[7px] mb-9 ">
               <div className="flex items-center gap-x-2 ">
                 <p className="text-[21px] font-semibold ">Request Sample </p>
                 <img

@@ -28,7 +28,7 @@ const Item5 = () => {
 
   return (
     <div>
-      <div className="w-full h-[600px] py-[22px] px-[98px]">
+      <div className="w-full h-[600px] py-[22px] px-[98px] overflow-hidden">
         <h2 className="w-full">Limit Result</h2>
         <div className="w-full h-[25px] "></div>
         {/* ----PART 2 //  ---- */}

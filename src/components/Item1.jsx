@@ -42,7 +42,7 @@ const Item1 = () => {
               <div className="h-[55px] w-5 "></div>
               <p className="text-[21px] ">Create a new event.</p>
             </div>
-            <div className="flex flex-col w-[370px] h-full gap-y-[7px] mb-9 border-2">
+            <div className="flex flex-col w-[370px] h-full gap-y-[7px] mb-9">
               <div className="flex items-center gap-x-2 ">
                 <p className="text-[21px] font-semibold ">Request Sample </p>
                 <img

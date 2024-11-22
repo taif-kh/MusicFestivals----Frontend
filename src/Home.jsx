@@ -384,8 +384,8 @@ console.log(userDetails);
              {item == 4 && <Item4 />}
 
 </div>
-            
-<button onClick={scrollToTop} className="absolute right-1/2 bottom-0 rotate-180">
+            {/* 696 */}
+<button onClick={scrollToTop} className="absolute right-[700px] bottom-0 rotate-180">
         <img src="/down.png" alt="Scroll Down" />
       </button>
             </div>
