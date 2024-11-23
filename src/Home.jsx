@@ -224,24 +224,50 @@ console.log(userDetails);
           </div>
         )}
           {/* If no user is logged in */}
-          {!user &&           <div className={`${hidden ? 'hidden' : '' } w-screen h-screen`}>
-            <button onClick={() => setHidden(!hidden)} className=''>Exit</button>
-          <h2 className="text-center">Log In</h2>
-          <form onSubmit={LoginSubmit} className='text-black'>
-            <div className="flex flex-col items-center gap-y-2">
+          {!user &&           
+          <div className={`${hidden ? 'hidden' : '' } w-screen h-screen`}>
+
+<button onClick={() => setHidden(!hidden)} className=' px-9 py-9  w-screen flex justify-end'> <img src="/reject.png" className='invert w-11 h-11' /> </button>
+<div className='px-9 py-9 flex flex-col items-start justify-start w-screen h-screen '>
+<div className=''>
+<h2 className="">Log In</h2>
+          <form onSubmit={LoginSubmit} className=' flex flex-col justify-center items-start w-screen h-[50px]'>
+            <div className="text-white flex  items-center justify-around ">
               <label>
-                Email:
-                <input type="text" name="email" className="w-52" />
+                Email
+                <input type="text" name="email" className="w-52 text-black ml-3" />
               </label>
-              <label>
-                Password:
-                <input type="password" name="password" className="w-52" />
+              <label className='ml-3'>
+                Password
+                <input type="password" name="password" className="w-52 text-black ml-3" />
               </label>
-              <button type="submit" className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">
+              <button type="submit" className=" ml-10 bg-blue-500 text-white px-4 py-2 rounded h-[24px] text-[16px] flex items-center justify-center">
                 Log In
               </button>
             </div>
           </form>
+</div>
+          <div className='w-full h-10'></div>
+          {/* -------SIGNUP-------------------- */}
+<div>
+<h2 className="">Sign Up</h2>
+          <form onSubmit={LoginSubmit} className=' flex flex-col justify-center items-start w-screen h-[50px]'>
+            <div className="text-white flex  items-center justify-around ">
+              <label>
+                Email
+                <input type="text" name="email" className="w-52 text-black ml-3" />
+              </label>
+              <label className='ml-3'>
+                Password
+                <input type="password" name="password" className="w-52 text-black ml-3" />
+              </label>
+              <button type="submit" className=" ml-10 bg-blue-500 text-white px-4 py-2 rounded h-[24px] text-[16px] flex items-center justify-center">
+                Sign Up
+              </button>
+            </div>
+          </form>
+</div>
+</div>
           </div>
           }
 

@@ -15,7 +15,7 @@ const Component5 = forwardRef(({ component6Ref }, ref) => {
             <div className='h-[71px] w-full '></div>
             <div className='flex gap-3 justify-start'>
             <button className='w-[160px] h-[64px] bg-white text-black rounded-[45px] flex justify-center items-center'>Join us</button>
-            <button className='w-[160px] h-[64px] bg-black text-white rounded-[45px] flex justify-center items-center border-2' onClick={handleScroll}>API Reference</button>
+            <button className='w-[180px] h-[64px] bg-black text-white rounded-[45px] flex justify-center items-center border-2' onClick={handleScroll}>API Reference</button>
             </div>
             <div className='h-[261px] w-full '></div>
             </div>
