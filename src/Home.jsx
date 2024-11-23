@@ -171,33 +171,22 @@ console.log(userDetails);
         {user && (
           <div className="">
 
-            <div className='flex flex-col justify-center items-center w-screen h-[685px]   '>
+            <div className='flex flex-col justify-center items-center w-screen h-screen   relative '>
               
 
 
             {/* ---- USER DETAILS --- */}
-            <div className='flex  flex-col text-[16px] w-screen pl-[100px]'>
-            <h3>Welcome</h3>
-            <h3>Your email: {user.email}</h3>
-            <h3>Your ID: {user.id}</h3>
-            <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded text-[16px] w-[100px] h-12 ">
+
+                {/* ---- USER DETAILS --- */}
+                <button onClick={removeToken} className="mt-2 bg-red-500 text-white px-4 py-2 rounded text-[16px] w-[100px] h-12 absolute right-4 top-4  hover:shadow-[0px_0px_10px_4px_rgba(255,0,0,0.5)]  ">
               Log Out
             </button>
-            <div>
-            </div>
-            <h3>Your JWT Token:</h3>
-            <p className="w-64 p-2 rounded text-[16px]">
-              {user.token || localStorage.getItem("jwt_token")}
-            </p>
-            </div>
-                {/* ---- USER DETAILS --- */}
-
 
 
 
 
             {/* ---- GETY API --- */}
-              <div className='flex items-center pr-[570px] gap-x-3'>
+              <div className='flex items-center pr-[570px] gap-x-3 '>
               <p className='text-[28px] font-bold '>Get your API Key</p>
             <img
                   src="/copy.png"
@@ -212,13 +201,14 @@ console.log(userDetails);
               {/* pr-[690px]  */}
               <div className='flex gap-x-3  w-[817px] items-center justify-between'>
                 <div className='flex items-center gap-x-1'>
-                <button className='text-[21px] font-semibold' onClick={() =>{ChangeKey(user)}}>{userDetails.apiKey ? 'Change' : 'Create'} it</button>
+                <button className='text-[21px] font-semibold ' onClick={() =>{ChangeKey(user)}}>{userDetails.apiKey ? 'Change' : 'Create'} it</button>
               <img src="/refresh.png"
                                 className=" w-[20px] h-[20px] cursor-pointer"
               />
                   </div>
                   <div className='text-[16px] flex gap-x-3 justify-self-end'><p className='font-semibold text-[16px]'>Your id: </p> { user.id} </div>
               </div>
+
             </div>
 
           </div>
@@ -241,7 +231,7 @@ console.log(userDetails);
                 Password
                 <input type="password" name="password" className="w-52 text-black ml-3" />
               </label>
-              <button type="submit" className=" ml-10 bg-blue-500 text-white px-4 py-2 rounded h-[24px] text-[16px] flex items-center justify-center">
+              <button type="submit" className=" ml-10 border-2 text-white px-4 py-2 rounded h-[30px] text-[16px] flex items-center justify-center">
                 Log In
               </button>
             </div>
@@ -261,7 +251,7 @@ console.log(userDetails);
                 Password
                 <input type="password" name="password" className="w-52 text-black ml-3" />
               </label>
-              <button type="submit" className=" ml-10 bg-blue-500 text-white px-4 py-2 rounded h-[24px] text-[16px] flex items-center justify-center">
+              <button type="submit" className=" ml-10 border-2 text-white px-4 py-2 rounded h-[30px] text-[16px] flex items-center justify-center">
                 Sign Up
               </button>
             </div>
