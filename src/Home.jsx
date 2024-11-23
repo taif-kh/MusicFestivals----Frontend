@@ -268,6 +268,18 @@ console.log(userDetails);
       >
         Get started
       </button>   
+      <div>
+      <div className='pl-20 font-medium list-disc flex gap-x-16 w-[1300px] items-center justify-center pt-32'>
+ <div className='flex items-center justify-start gap-x-3 '>        <h2>React.js </h2>         <img src="/react.svg" className="invert w-14 h-14" alt="React Logo" />
+</div>
+        <div className='flex items-center justify-start gap-x-3'>        <h2>PostgreSQL </h2>         <img src="/postgre.svg" className="invert w-14 h-14" alt="React Logo" />
+        </div>
+        <div className='flex items-center justify-start gap-x-3'>        <h2>Express.js </h2>         <img src="/expressOne.svg" className="invert w-14 h-16" alt="React Logo" />
+        </div>
+        <div className='flex items-center justify-start gap-x-3'>        <h2>Node.js </h2>         <img src="/nodejs.svg" className="invert w-14 h-14" alt="React Logo" />
+        </div>
+        </div>
+      </div>
   </div>
 
 
