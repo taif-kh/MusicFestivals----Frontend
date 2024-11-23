@@ -43,6 +43,23 @@ const Home = () => {
     }
   };
 
+
+
+  async function signupHandle(e) {
+    e.preventDefault(); 
+  
+    const formData = new FormData(e.target); 
+    const data = Object.fromEntries(formData.entries());
+  
+    axios.post('http://localhost:3000/sign-up', data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error('There was an error submitting the form!', error);
+      });
+  };
+
   const names = ['List Events', 'Create Event', 'Get event', 'Delete Event', 'Update Event', 'Limit Result', 'List an artist\'s Events', 'List a city\'s Events', 'Hide Event', 'Modify an Event\'s field', 'Get API Key', 'Create/Modify API Key', 'Sign Up', 'Log In', 'Get a user\'s Events', 'Get User', 'List Users', 'Delete User'];
   const paths = ['/events', ''];
   async function addToken(data) {
@@ -241,7 +258,7 @@ console.log(userDetails);
           {/* -------SIGNUP-------------------- */}
 <div>
 <h2 className="">Sign Up</h2>
-          <form onSubmit={LoginSubmit} className=' flex flex-col justify-center items-start w-screen h-[50px]'>
+          <form onSubmit={signupHandle} className=' flex flex-col justify-center items-start w-screen h-[50px]'>
             <div className="text-white flex  items-center justify-around ">
               <label>
                 Email
